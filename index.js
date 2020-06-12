@@ -241,7 +241,7 @@ for(i = 0; i < array.length; i++){
 }
 return newArray;
 }
-console.log(get20s(artists));
+//console.log(get20s(artists));
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -257,7 +257,7 @@ function removeArtist(array, index) {
    array.splice(index, 1)[index];
    return array;
   }
-  //console.log(removeArtist(artists, 0));
+  console.log(removeArtist(artists, 0));
   /**
 
 
@@ -335,11 +335,16 @@ function getHTML(/* Code here */){
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
-function randomize(/* Code here */){
+function randomize(array){
+  let randomizedArray = [];
+  let random;
 
-    /* Code here */
-
+  for (let i = 0; i < array.length; i++){
+    random = Math.round(Math.random() * array.length);
+    randomizedArray.push(array.splice(random, 1)[0]);
   }
-
+  return randomizedArray;
+  }
+console.log(randomize(artists));
 
  /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
