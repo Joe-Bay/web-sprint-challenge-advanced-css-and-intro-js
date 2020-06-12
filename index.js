@@ -207,7 +207,8 @@ const artists = [
 
 (1) Name of the first artist (0th index) in the array
 (2) Bio of the third artist (2nd index) in the array */
-
+console.log(artists[0]);
+console.log(artists[1].bio);
 
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
@@ -223,20 +224,24 @@ const artists = [
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
 function getArtistByIndex(array, index) {
-    /* code here */
+    return `The artist at index ${index} is ${array[index].name}`;
   }
-  
+  console.log(getArtistByIndex(artists, 0));
   /**
 
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who lived in the 20th century (1900-2000) */
 
-function get20s(/* Code here */){
-
-  /* Code here */
-
+function get20s(array){
+  newArray =[];
+for(i = 0; i < array.length; i++){
+  if(array[i].years.includes(190 || 191 || 192 || 193 || 194 || 195 || 196 || 197 || 198 || 199 || 200)){
+    newArray.push(array[i]);
+  }
 }
-
+return newArray;
+}
+console.log(get20s(artists));
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -248,10 +253,11 @@ function get20s(/* Code here */){
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
-function removeArtist(/*code here*/) {
-    /* code here */
+function removeArtist(array, index) {
+   array.splice(index, 1)[index];
+   return array;
   }
-  
+  console.log(removeArtist(artists, 0));
   /**
 
 
