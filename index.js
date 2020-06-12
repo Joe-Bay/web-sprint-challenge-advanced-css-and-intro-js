@@ -207,12 +207,12 @@ const artists = [
 
 (1) Name of the first artist (0th index) in the array
 (2) Bio of the third artist (2nd index) in the array */
-console.log(artists[0]);
-console.log(artists[1].bio);
+//  console.log(artists[0]);
+//  console.log(artists[1].bio);
 
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
-
+//artists[9].name = "Vincent Van Gogh";
 
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
@@ -226,7 +226,7 @@ console.log(artists[1].bio);
 function getArtistByIndex(array, index) {
     return `The artist at index ${index} is ${array[index].name}`;
   }
-  console.log(getArtistByIndex(artists, 0));
+  //console.log(getArtistByIndex(artists, 0));
   /**
 
 
@@ -234,14 +234,14 @@ function getArtistByIndex(array, index) {
 
 function get20s(array){
   newArray =[];
-for(i = 0; i < array.length; i++){
-  if(array[i].years.includes(190 || 191 || 192 || 193 || 194 || 195 || 196 || 197 || 198 || 199 || 200)){
+for(let i = 0; i < array.length; i++){
+  if(array[i].years[1] === "9"){
     newArray.push(array[i]);
   }
 }
 return newArray;
 }
-//console.log(get20s(artists));
+console.log(get20s(artists));
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -257,7 +257,7 @@ function removeArtist(array, index) {
    array.splice(index, 1)[index];
    return array;
   }
-  console.log(removeArtist(artists, 0));
+  //console.log(removeArtist(artists, 0));
   /**
 
 
@@ -275,13 +275,14 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should console.log() the new array with information added"*/
 
-function addArtist(array){
-   return array.push({id: 21, name: "Joe Bay", years: "1996-current day", genre: "Web Design", nationality: "White", bio: "loves tacos, animation, video games, and many more things lives in Alaska wants to have a career in software development"});
+function addArtist(array, id, name, years, genre, nationality, bio){
+   return array.push({id: id, name: name, years: genre, genre: genre, nationality: nationality, bio: bio});
 
 
   }
-  addArtist(artists);
-  console.log(artists);
+  addArtist(artists, "Joe", "1996-current day", "Web Design", "White", "Loves Tacos and movies and stuff");
+
+
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
@@ -300,7 +301,7 @@ function lotsOfArt(array){
   }
 return lotsOfArtArray;
 }
-console.log(lotsOfArt(artists));
+//console.log(lotsOfArt(artists));
 
 
 // 🎨🎨 STRETCH 🎨🎨//
@@ -336,15 +337,13 @@ function getHTML(/* Code here */){
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
 function randomize(array){
-  let randomizedArray = [];
-  let random;
-
-  for (let i = 0; i < array.length; i++){
-    random = Math.round(Math.random() * array.length);
-    randomizedArray.push(array.splice(random, 1)[0]);
+for (let i = 0; i < array.length; i++){
+    let random = Math.floor(Math.random() * array.length);
+    array.push(array.splice(random, 1)[0]);
   }
-  return randomizedArray;
+  return array;
   }
-console.log(randomize(artists));
+  //console.log(randomize(artists));
 
  /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
+//  function randomize(data) {
